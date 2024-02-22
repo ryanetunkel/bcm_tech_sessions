@@ -18,7 +18,7 @@ def test_exp2_python311_or_later():
     result = module.exp2(4)
     assert result == 16
 
-
+@pytest.mark.skipif(sys.version_info >= (3, 11), reason="requires python3.10 or lower")
 def test_exp2_python310_or_earlier():
     """Test the exp2 works as expected if python version is 3.11 or later"""
     result = module.exp2(4)
